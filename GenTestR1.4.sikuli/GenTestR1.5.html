@@ -1,0 +1,116 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }
+
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>GenTestR1.5.sikuli</h2> <a href="GenTestR1.5.zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+version = <span class="str">"AutomateG1.5"</span>
+curScr = Screen(<span class="dig">0</span>)
+popat(curScr)
+winVariable = <span class="str">""</span>
+macVariable = <span class="str">"Mac OS X 10."</span> + Key.ENTER + <span class="str">"MacBook Pro "</span> + Key.ENTER + <span class="str">"Model"</span>
+
+isWindows = popAsk(<span class="str">"Are you testing on Windows?"</span>, version)
+
+<span class="kw">while</span> True:
+    curScr.<span class="skw">click</span>(<img src="1470125507873.png" />)
+    <span class="skw">popup</span>(<span class="str">"Press OK when you have finished testing"</span>, version)
+    curScr.<span class="skw">click</span>(<img src="1470125519799.png" />)
+    curScr.<span class="skw">wait</span>(<img src="1470046377455.png" />)
+    <span class="kw">if</span> <span class="kw">not</span> isWindows:
+        curScr.<span class="skw">click</span>(<img src="1470046377455.png" />)
+        curScr.paste(macVariable)
+    <span class="kw">else</span>:
+        curScr.<span class="skw">click</span>(<img src="1470046377455.png" />)
+        curScr.paste(winVariable)
+    curScr.<span class="skw">click</span>(<img src="1470046406673.png" />)
+    curScr.<span class="skw">click</span>(<img src="1470223593900.png" />)
+
+    curScr.paste(<span class="str">"1.14.0.44"</span>)
+    curScr.<span class="skw">click</span>(<img src="1470046187921.png" />)
+    <span class="kw">if</span> <span class="kw">not</span> isWindows:
+        curScr.<span class="skw">type</span>(<span class="str">"Mac OS X 10.10"</span>)
+    <span class="kw">else</span>:
+        curScr.<span class="skw">type</span>(<span class="str">"Windows 7 64"</span>)
+    answer = popAsk(<span class="str">"Did the test pass?"</span>, version)
+    <span class="kw">if</span> <span class="kw">not</span> answer:
+        defect = curScr.<span class="skw">input</span>(<span class="str">"Please enter defect code"</span>)
+        curScr.<span class="skw">click</span>(<img src="1470210216668.png" />)
+        curScr.paste(defect)
+        curScr.<span class="skw">popup</span>(<span class="str">"Select test steps that failed and change Status"</span>, version)
+    curScr.<span class="skw">click</span>(<img src="1470644657529.png" />)
+    <span class="skw">wait</span>(<span class="dig">1</span>)
+    curScr.<span class="skw">click</span>(<img src="1470126608431.png" />)
+    doWeContinue = popAsk(<span class="str">"Another test?"</span>, version)
+    <span class="kw">if</span> <span class="kw">not</span> doWeContinue:
+        <span class="skw">popup</span>(<span class="str">"You're Winner"</span>, version)
+        exit(<span class="dig">1</span>)
+</pre>
+</body>
+</html>
