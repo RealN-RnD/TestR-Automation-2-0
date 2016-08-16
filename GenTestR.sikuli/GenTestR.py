@@ -1,8 +1,8 @@
-version = "AutomateG1.5"
+version = "AutomateG1.6"
 curScr = Screen(0)
 popat(curScr)
 winVariable = ""
-macVariable = "Mac OS X 10." + Key.ENTER + "MacBook Pro " + Key.ENTER + "Model"
+macVariable = "Mac OS X 10.10.5" + Key.ENTER + "MacBook Pro (Retina 13-inch Late 2013)" + Key.ENTER + "Model A1502" + Key.ENTER + Key.ENTER + "Backend - 1.14.0.44"
 
 isWindows = popAsk("Are you testing on Windows?", version)
 
@@ -10,7 +10,7 @@ while True:
     curScr.click("1470125507873.png")
     popup("Press OK when you have finished testing", version)
     curScr.click("1470125519799.png")
-    curScr.wait("1470046377455.png") 
+    wait(1)
     if not isWindows:
         curScr.click("1470046377455.png")   
         curScr.paste(macVariable)
@@ -20,7 +20,7 @@ while True:
     curScr.click("1470046406673.png")
     curScr.click("1470223593900.png")
     
-    curScr.paste("1.14.0.44")
+    curScr.paste("1.4.0.35533")
     curScr.click("1470046187921.png")
     if not isWindows:
         curScr.type("Mac OS X 10.10")
@@ -31,8 +31,8 @@ while True:
         defect = curScr.input("Please enter defect code")
         curScr.click("1470210216668.png")
         curScr.paste(defect)
-        curScr.popup("Select test steps that failed and change Status", version)
-    curScr.click("1470644657529.png")
+        popup("Select test steps that failed and change Status", version)
+    curScr.click(Pattern("1470644657529.png").similar(0.97))
     wait(1)
     curScr.click("1470126608431.png")
     doWeContinue = popAsk("Another test?", version)

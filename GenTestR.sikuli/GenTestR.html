@@ -70,11 +70,11 @@
 <h2>GenTestR.sikuli</h2> <a href="GenTestR.zip">(Download this script)</a>
 </div>
 <pre class="sikuli-code">
-version = <span class="str">"AutomateG1.5"</span>
+version = <span class="str">"AutomateG1.6"</span>
 curScr = Screen(<span class="dig">0</span>)
 popat(curScr)
 winVariable = <span class="str">""</span>
-macVariable = <span class="str">"Mac OS X 10."</span> + Key.ENTER + <span class="str">"MacBook Pro "</span> + Key.ENTER + <span class="str">"Model"</span>
+macVariable = <span class="str">"Mac OS X 10.10.5"</span> + Key.ENTER + <span class="str">"MacBook Pro (Retina 13-inch Late 2013)"</span> + Key.ENTER + <span class="str">"Model A1502"</span> + Key.ENTER + Key.ENTER + <span class="str">"Backend - 1.14.0.44"</span>
 
 isWindows = popAsk(<span class="str">"Are you testing on Windows?"</span>, version)
 
@@ -82,7 +82,7 @@ isWindows = popAsk(<span class="str">"Are you testing on Windows?"</span>, versi
     curScr.<span class="skw">click</span>(<img src="1470125507873.png" />)
     <span class="skw">popup</span>(<span class="str">"Press OK when you have finished testing"</span>, version)
     curScr.<span class="skw">click</span>(<img src="1470125519799.png" />)
-    curScr.<span class="skw">wait</span>(<img src="1470046377455.png" />)
+    <span class="skw">wait</span>(<span class="dig">1</span>)
     <span class="kw">if</span> <span class="kw">not</span> isWindows:
         curScr.<span class="skw">click</span>(<img src="1470046377455.png" />)
         curScr.paste(macVariable)
@@ -92,7 +92,7 @@ isWindows = popAsk(<span class="str">"Are you testing on Windows?"</span>, versi
     curScr.<span class="skw">click</span>(<img src="1470046406673.png" />)
     curScr.<span class="skw">click</span>(<img src="1470223593900.png" />)
 
-    curScr.paste(<span class="str">"1.14.0.44"</span>)
+    curScr.paste(<span class="str">"1.4.0.35533"</span>)
     curScr.<span class="skw">click</span>(<img src="1470046187921.png" />)
     <span class="kw">if</span> <span class="kw">not</span> isWindows:
         curScr.<span class="skw">type</span>(<span class="str">"Mac OS X 10.10"</span>)
@@ -103,8 +103,8 @@ isWindows = popAsk(<span class="str">"Are you testing on Windows?"</span>, versi
         defect = curScr.<span class="skw">input</span>(<span class="str">"Please enter defect code"</span>)
         curScr.<span class="skw">click</span>(<img src="1470210216668.png" />)
         curScr.paste(defect)
-        curScr.<span class="skw">popup</span>(<span class="str">"Select test steps that failed and change Status"</span>, version)
-    curScr.<span class="skw">click</span>(<img src="1470644657529.png" />)
+        <span class="skw">popup</span>(<span class="str">"Select test steps that failed and change Status"</span>, version)
+    curScr.<span class="skw">click</span>(Pattern(<img src="1470644657529.png" />).similar(<span class="dig">0.97</span>))
     <span class="skw">wait</span>(<span class="dig">1</span>)
     curScr.<span class="skw">click</span>(<img src="1470126608431.png" />)
     doWeContinue = popAsk(<span class="str">"Another test?"</span>, version)
