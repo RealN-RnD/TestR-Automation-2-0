@@ -1,8 +1,10 @@
-version = "AutomateG1.6"
+version = "AutomateG1.7"
 curScr = Screen(0)
 popat(curScr)
+
+aut = "1.14.0.60"
 winVariable = ""
-macVariable = "Mac OS X 10.10.5" + Key.ENTER + "MacBook Pro (Retina 13-inch Late 2013)" + Key.ENTER + "Model A1502" + Key.ENTER + Key.ENTER + "Backend - 1.14.0.44"
+macVariable = "Mac OS X 10.10.5" + Key.ENTER + "MacBook Pro (Retina 13-inch Late 2013)" + Key.ENTER + "Model A1502"
 
 isWindows = popAsk("Are you testing on Windows?", version)
 
@@ -20,7 +22,7 @@ while True:
     curScr.click("1470046406673.png")
     curScr.click("1470223593900.png")
     
-    curScr.paste("1.4.0.35533")
+    curScr.paste(aut)
     curScr.click("1470046187921.png")
     if not isWindows:
         curScr.type("Mac OS X 10.10")

@@ -70,11 +70,13 @@
 <h2>GenTestR.sikuli</h2> <a href="GenTestR.zip">(Download this script)</a>
 </div>
 <pre class="sikuli-code">
-version = <span class="str">"AutomateG1.6"</span>
+version = <span class="str">"AutomateG1.7"</span>
 curScr = Screen(<span class="dig">0</span>)
 popat(curScr)
+
+aut = <span class="str">"1.14.0.60"</span>
 winVariable = <span class="str">""</span>
-macVariable = <span class="str">"Mac OS X 10.10.5"</span> + Key.ENTER + <span class="str">"MacBook Pro (Retina 13-inch Late 2013)"</span> + Key.ENTER + <span class="str">"Model A1502"</span> + Key.ENTER + Key.ENTER + <span class="str">"Backend - 1.14.0.44"</span>
+macVariable = <span class="str">"Mac OS X 10.10.5"</span> + Key.ENTER + <span class="str">"MacBook Pro (Retina 13-inch Late 2013)"</span> + Key.ENTER + <span class="str">"Model A1502"</span>
 
 isWindows = popAsk(<span class="str">"Are you testing on Windows?"</span>, version)
 
@@ -92,7 +94,7 @@ isWindows = popAsk(<span class="str">"Are you testing on Windows?"</span>, versi
     curScr.<span class="skw">click</span>(<img src="1470046406673.png" />)
     curScr.<span class="skw">click</span>(<img src="1470223593900.png" />)
 
-    curScr.paste(<span class="str">"1.4.0.35533"</span>)
+    curScr.paste(aut)
     curScr.<span class="skw">click</span>(<img src="1470046187921.png" />)
     <span class="kw">if</span> <span class="kw">not</span> isWindows:
         curScr.<span class="skw">type</span>(<span class="str">"Mac OS X 10.10"</span>)
