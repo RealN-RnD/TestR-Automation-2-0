@@ -1,24 +1,24 @@
-version = "AutomateG1.7"
+version = "AutomateG1.8"
 curScr = Screen(0)
 popat(curScr)
 
-aut = "1.14.0.60"
-winVariable = ""
-macVariable = "Mac OS X 10.10.5" + Key.ENTER + "MacBook Pro (Retina 13-inch Late 2013)" + Key.ENTER + "Model A1502"
+aut = "1.4.0.35549"
+winVariable = "HTC Nexus 9 - Android 6.0.1"
+macVariable = "Mac OS X 10.10.5" + Key.ENTER + "MacBook Pro (Retina 13-inch Late 2013)" + Key.ENTER + "Model A1502" + Key.ENTER + Key.ENTER + "Backend 1.14.0.60"
 
-isWindows = popAsk("Are you testing on Windows?", version)
+isMac = popAsk("Are you testing on Mac?", version)
 
 while True:
     curScr.click("1470125507873.png")
     popup("Press OK when you have finished testing", version)
     curScr.click("1470125519799.png")
     wait(1)
-    if not isWindows:
+    if not isMac:
         curScr.click("1470046377455.png")   
-        curScr.paste(macVariable)
+        curScr.paste(winVariable)
     else:
         curScr.click("1470046377455.png")
-        curScr.paste(winVariable)
+        curScr.paste(macVariable)
     curScr.click("1470046406673.png")
     curScr.click("1470223593900.png")
     

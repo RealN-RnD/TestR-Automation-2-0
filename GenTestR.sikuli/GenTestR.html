@@ -70,27 +70,27 @@
 <h2>GenTestR.sikuli</h2> <a href="GenTestR.zip">(Download this script)</a>
 </div>
 <pre class="sikuli-code">
-version = <span class="str">"AutomateG1.7"</span>
+version = <span class="str">"AutomateG1.8"</span>
 curScr = Screen(<span class="dig">0</span>)
 popat(curScr)
 
-aut = <span class="str">"1.14.0.60"</span>
-winVariable = <span class="str">""</span>
-macVariable = <span class="str">"Mac OS X 10.10.5"</span> + Key.ENTER + <span class="str">"MacBook Pro (Retina 13-inch Late 2013)"</span> + Key.ENTER + <span class="str">"Model A1502"</span>
+aut = <span class="str">"1.4.0.35549"</span>
+winVariable = <span class="str">"HTC Nexus 9 - Android 6.0.1"</span>
+macVariable = <span class="str">"Mac OS X 10.10.5"</span> + Key.ENTER + <span class="str">"MacBook Pro (Retina 13-inch Late 2013)"</span> + Key.ENTER + <span class="str">"Model A1502"</span> + Key.ENTER + Key.ENTER + <span class="str">"Backend 1.14.0.60"</span>
 
-isWindows = popAsk(<span class="str">"Are you testing on Windows?"</span>, version)
+isMac = popAsk(<span class="str">"Are you testing on Mac?"</span>, version)
 
 <span class="kw">while</span> True:
     curScr.<span class="skw">click</span>(<img src="1470125507873.png" />)
     <span class="skw">popup</span>(<span class="str">"Press OK when you have finished testing"</span>, version)
     curScr.<span class="skw">click</span>(<img src="1470125519799.png" />)
     <span class="skw">wait</span>(<span class="dig">1</span>)
-    <span class="kw">if</span> <span class="kw">not</span> isWindows:
-        curScr.<span class="skw">click</span>(<img src="1470046377455.png" />)
-        curScr.paste(macVariable)
-    <span class="kw">else</span>:
+    <span class="kw">if</span> <span class="kw">not</span> isMac:
         curScr.<span class="skw">click</span>(<img src="1470046377455.png" />)
         curScr.paste(winVariable)
+    <span class="kw">else</span>:
+        curScr.<span class="skw">click</span>(<img src="1470046377455.png" />)
+        curScr.paste(macVariable)
     curScr.<span class="skw">click</span>(<img src="1470046406673.png" />)
     curScr.<span class="skw">click</span>(<img src="1470223593900.png" />)
 
